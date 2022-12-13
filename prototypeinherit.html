@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*function Person(name="sudheer",age=20,gender="male"){
+            this.name=name;
+            this.age=age;
+            this.gender=gender;
+            this.display=()=>{
+                console.log(this.name);
+                console.log(this.age);
+                console.log(this.gender);
+            }
+        }
+        let p1=new Person("hsudheer",20,"Male");
+        p1.display();
+        Person.prototype.phone=5678;
+        
+        Person.prototype.display_name=function(){
+            return this.name;
+        }
+        console.log("////");
+        let p2=new Person("gaurav",20,"male",4567);
+        //p2.display();
+        /*console.log(p2.display_name());
+        console.log(p2.phone);*/
+        function Employee(name,age,experience){
+            this.name=name;
+            this.age=age;
+            this.experience=experience;
+            this.display=function(){
+                return this.name;
+            }
+        }
+            Employee.prototype.slogan=function(){
+                console.log("This is the best company..");
+            }
+            let e1=new Employee("ram",20,5);
+            console.log(e1.display());
+            function Programmer(name,age,experience,language){
+                //here we call the employee function so that programmer function inherit the properties of employee
+                Employee.call(this,name,age,experience);
+                this.language=language;
+            }
+            let sudheer=new Programmer("Sudheer",20,5,"Javascript");
+            console.log(sudheer);
+            //The below call doesnt execute beacuse we added that slogan method after writing the employee function
+            //through prototype inheritance  
+            //sudheer.slogan();
+            //to make it work we use the followin statement
+            Programmer.prototype=Object.create(Employee.prototype);
+            console.log(sudheer);
+            //sequennce control//
+            function displayer(some){
+                console.log("Result is:"+some);
+            }
+            function calculator(a,b){
+                let result=a+b;
+                return result;
+            }
+            let res=calculator(5,7);
+            displayer(res);
+            //asynchrnous function
+            function wishD(){
+                alert("Hello all!!!");
+            }
+            setTimeout(wishD,2000);
+            function sample2(){
+                let d=new Date();
+                document.write(d.getHours()+":"+d.getMinutes()+":"+d.getSeconds());
+                document.write("<br>");
+            }
+            setInterval(sample2,2000);
+            
+
+        
+        
+
+    </script>
+</body>
+</html>
